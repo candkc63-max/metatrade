@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Safe area for notched devices (iPhone, etc.) */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --bullish: 142 72% 45%;
+    --bearish: 0 72% 55%;
+    --neutral: 38 92% 50%;
+  }
+
+  :root, .dark {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 90%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 90%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 210 20% 90%;
+
+    --primary: 142 72% 45%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 80%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 142 72% 45%;
+
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 142 72% 45%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 14% 14%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 142 72% 45%;
+  }
+
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 142 72% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 220 20% 30%;
+
+    --muted: 220 14% 93%;
+    --muted-foreground: 215 12% 45%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 14% 85%;
+    --input: 220 14% 85%;
+    --ring: 142 72% 38%;
+
+    --bullish: 142 72% 38%;
+    --bearish: 0 72% 50%;
+    --neutral: 38 92% 45%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 15%;
+    --sidebar-primary: 142 72% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 93%;
+    --sidebar-accent-foreground: 220 20% 15%;
+    --sidebar-border: 220 14% 85%;
+    --sidebar-ring: 142 72% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .text-bullish {
+    color: hsl(var(--bullish));
+  }
+  .text-bearish {
+    color: hsl(var(--bearish));
+  }
+  .text-neutral-signal {
+    color: hsl(var(--neutral));
+  }
+  .bg-bullish {
+    background-color: hsl(var(--bullish));
+  }
+  .bg-bearish {
+    background-color: hsl(var(--bearish));
+  }
+  .bg-bullish\/10 {
+    background-color: hsl(var(--bullish) / 0.1);
+  }
+  .bg-bearish\/10 {
+    background-color: hsl(var(--bearish) / 0.1);
+  }
+  .border-bullish {
+    border-color: hsl(var(--bullish));
+  }
+  .border-bearish {
+    border-color: hsl(var(--bearish));
+  }
+  .glow-green {
+    box-shadow: 0 0 20px hsl(var(--bullish) / 0.15), 0 0 60px hsl(var(--bullish) / 0.05);
+  }
+}
